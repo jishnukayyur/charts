@@ -27,7 +27,7 @@ export class ChartService {
       "ngrok-skip-browser-warning": "69420"
     })
 
-    this._http.get<any>(this.chartUrl, { headers: headers, observe: 'response' }).subscribe(data => {
+    this._http.get<object[]>(this.chartUrl, { headers: headers, observe: 'response' }).subscribe(data => {
       this.datasubject.next(data.body)
     })
 
